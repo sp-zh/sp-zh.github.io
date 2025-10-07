@@ -28,7 +28,16 @@
     /* Header */
     header { display:flex; align-items:center; justify-content:space-between; gap:16px; padding:16px 0 8px; position: sticky; top: 0; backdrop-filter: blur(10px); background: linear-gradient(180deg, rgba(11,15,20,0.8), rgba(11,15,20,0)); z-index: 50; }
     .brand { display:flex; align-items:center; gap:12px; }
-    .avatar { width:40px; height:40px; border-radius:50%; background: linear-gradient(135deg, var(--accent), var(--accent-2)); box-shadow: 0 0 0 4px rgba(102,178,255,.15); }
+    .avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-image: url('avatar.jpg'); /* 或改成你的文件名 */
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 0 0 4px rgba(102,178,255,.15);
+}
+
     .name { font-weight: 700; letter-spacing: .3px; }
     nav a { margin-left: 16px; padding: 8px 10px; border-radius: 10px; }
     nav a:hover { background: rgba(102,178,255,.08); }
@@ -83,8 +92,8 @@
     <main>
       <section class="hero" id="about">
         <div>
-          <h1>你好，我是 <span style="color:var(--accent)">shupei</span>。我喜欢把<span style="color:var(--accent-2)">抽象模型</span>落地成可运行的系统。</h1>
-          <p class="lead">兴趣领域：控制系统（PID）、非线性动力学、电子与工程科学。这里是我的简历式个人主页与项目索引。</p>
+          <h1>你好，我是 <span style="color:var(--accent)">书培</span>。我喜欢把<span style="color:var(--accent-2)">抽象模型</span>落地成可运行的系统。</h1>
+          <p class="lead">兴趣领域：工程和科学。这里是我的简历式个人主页与项目索引。</p>
           <div class="cta">
             <a class="btn primary" href="#projects">查看项目</a>
             <a class="btn" href="#contact">联系我</a>
