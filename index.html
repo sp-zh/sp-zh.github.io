@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>shupei | Personal Site</title>
+  <meta name="description" content="个人主页：关于我、项目、联系方式。" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0b0f14;
+      --card: #0f1620;
+      --muted: #7b8aa0;
+      --fg: #e8eef7;
+      --accent: #66b2ff;
+      --accent-2: #9bffd6;
+      --ring: rgba(102,178,255,.35);
+    }
+    * { box-sizing: border-box; }
+    html,body { margin:0; height:100%; }
+    body { font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif; color: var(--fg); background: radial-gradient(1200px 800px at 80% -10%, rgba(102,178,255,.12), transparent 60%), radial-gradient(1000px 700px at -10% 0%, rgba(155,255,214,.08), transparent 60%), var(--bg); line-height: 1.6; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .container { max-width: 1000px; margin: 0 auto; padding: 24px; }
+
+    /* Header */
+    header { display:flex; align-items:center; justify-content:space-between; gap:16px; padding:16px 0 8px; position: sticky; top: 0; backdrop-filter: blur(10px); background: linear-gradient(180deg, rgba(11,15,20,0.8), rgba(11,15,20,0)); z-index: 50; }
+    .brand { display:flex; align-items:center; gap:12px; }
+    .avatar { width:40px; height:40px; border-radius:50%; background: linear-gradient(135deg, var(--accent), var(--accent-2)); box-shadow: 0 0 0 4px rgba(102,178,255,.15); }
+    .name { font-weight: 700; letter-spacing: .3px; }
+    nav a { margin-left: 16px; padding: 8px 10px; border-radius: 10px; }
+    nav a:hover { background: rgba(102,178,255,.08); }
+
+    /* Hero */
+    .hero { display:grid; grid-template-columns: 1.3fr 1fr; gap: 28px; align-items:center; padding: 48px 0 16px; }
+    .hero h1 { font-size: clamp(28px, 4vw, 44px); margin: 0 0 8px; line-height: 1.15; }
+    .hero p.lead { font-size: clamp(16px, 2.2vw, 20px); color: var(--muted); margin-top: 8px; }
+    .hero .cta { margin-top: 18px; display:flex; gap:12px; flex-wrap: wrap; }
+    .btn { display:inline-flex; align-items:center; gap:10px; padding: 10px 14px; border-radius: 12px; border: 1px solid rgba(255,255,255,.08); background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03)); color: var(--fg); text-decoration:none; box-shadow: 0 10px 30px -15px var(--ring); }
+    .btn.primary { background: linear-gradient(180deg, rgba(102,178,255,.25), rgba(102,178,255,.12)); border-color: rgba(102,178,255,.5); }
+    .btn:hover { transform: translateY(-1px); }
+
+    /* Sections */
+    section { padding: 32px 0; }
+    .section-title { font-size: 20px; letter-spacing:.5px; color: var(--muted); margin-bottom: 14px; }
+    .card-grid { display:grid; grid-template-columns: repeat(3, 1fr); gap:16px; }
+    .card { background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03)); border:1px solid rgba(255,255,255,.08); border-radius:18px; padding:16px; min-height: 140px; box-shadow: 0 8px 24px -18px var(--ring); }
+    .card h3 { margin: 0 0 8px; font-size: 18px; }
+    .meta { color: var(--muted); font-size: 13px; }
+
+    .timeline { border-left: 1.5px dashed rgba(255,255,255,.15); margin-left: 10px; padding-left: 16px; }
+    .timeline .item { margin: 12px 0; }
+    .timeline .item .when { font-size: 12px; color: var(--muted); }
+
+    /* Footer */
+    footer { padding: 32px 0 64px; color: var(--muted); font-size: 14px; }
+
+    /* Responsive */
+    @media (max-width: 900px){ .hero{ grid-template-columns: 1fr; } .card-grid{ grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 600px){ .card-grid{ grid-template-columns: 1fr; } nav{ display:none; } }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="avatar" aria-hidden="true"></div>
+        <div>
+          <div class="name">shupei</div>
+          <div class="meta">Engineering • Electronics • Applied Physics</div>
+        </div>
+      </div>
+      <nav>
+        <a href="#about">关于/About</a>
+        <a href="#projects">项目/Projects</a>
+        <a href="#timeline">动态/Timeline</a>
+        <a href="#contact">联系/Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" id="about">
+        <div>
+          <h1>你好，我是 <span style="color:var(--accent)">shupei</span>。我喜欢把<span style="color:var(--accent-2)">抽象模型</span>落地成可运行的系统。</h1>
+          <p class="lead">兴趣领域：控制系统（PID）、非线性动力学、电子与工程科学。这里是我的简历式个人主页与项目索引。</p>
+          <div class="cta">
+            <a class="btn primary" href="#projects">查看项目</a>
+            <a class="btn" href="#contact">联系我</a>
+          </div>
+        </div>
+        <div>
+          <div class="card">
+            <h3>当前在做</h3>
+            <ul>
+              <li>EngSci 一年级课程笔记整理</li>
+              <li>混沌电路（Lorenz/Chen）仿真与 PCB</li>
+              <li>控制实验：无人机姿态稳定（PID）</li>
+            </ul>
+            <p class="meta">欢迎交流：控制、电子、力学题解与可复现代码。</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="projects">
+        <div class="section-title">精选项目 Projects</div>
+        <div class="card-grid">
+          <article class="card">
+            <h3>EngSci Year 1 Notes</h3>
+            <p>微积分、线代、力学、电路、材料与结构的要点提炼与题解。</p>
+            <p class="meta">Study / Teaching</p>
+          </article>
+          <article class="card">
+            <h3>PID Drone Stabilizer</h3>
+            <p>使用 MPU6050 + Arduino，带抗积分饱和与离散导数滤波；含调参笔记与实测曲线。</p>
+            <p class="meta">Python / C / 控制</p>
+          </article>
+          <article class="card">
+            <h3>Lorenz / Chen Chaos PCB</h3>
+            <p>从 LTspice 仿真到焊接成板，记录参数选择、非线性行为与相图。</p>
+            <p class="meta">Analog / PCB / 仿真</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="timeline">
+        <div class="section-title">最近动态 Timeline</div>
+        <div class="timeline">
+          <div class="item">
+            <div class="when">2025-10</div>
+            <div>搭建个人网站 v1，上线 GitHub Pages；整理控制与力学笔记。</div>
+          </div>
+          <div class="item">
+            <div class="when">2025-09</div>
+            <div>完成混沌电路 PCB 打样；优化无人机抗风干扰控制。</div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact">
+        <div class="section-title">联系我 Contact</div>
+        <div class="card">
+          <p>邮箱：<a href="mailto:shupei.zhang@utoronto.ca">shupei.zhang@utoronto.ca</a> ｜ GitHub：<a href="https://github.com/sp-zh" target="_blank" rel="noreferrer">@sp-zh</a></p>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div>© <span id="year"></span>shupei. Built with ❤ and GitHub Pages.</div>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
